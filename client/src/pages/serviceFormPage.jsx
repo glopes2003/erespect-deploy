@@ -2,8 +2,8 @@
 
 import React, { useRef, useState } from "react";
 import axios from "axios";
-import serviceForm from "./assets/service-form.svg";
-import verified from "./assets/verified.svg";
+import serviceForm from "../assets/service-form.svg";
+import verified from "../assets/verified.svg";
 import { toast } from "react-toastify";
 
 const ServiceFormPage = () => {
