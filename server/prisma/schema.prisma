@@ -27,8 +27,6 @@ model feedback {
   id       Int      @id @default(autoincrement())
   nome     String
   email    String
-  telefone String
-  relacao  String
 
   @@map("feedback")
 }

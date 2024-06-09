@@ -36,4 +36,30 @@ app.post("/user", async (request, response) => {
   }
 });
 
+app.get("/feedback", async (request, response) => {
+  try {
+    const feedback = await prismaClient.feedback.findMany();
+    return response.json(feedback);
+  } catch (error) {
+    console.error("Error fetching feedback:", error);
+    return response.status(500).json({ error: "Internal server error" });
+  }
+});
+
+app.post("/feedback", async (request, response) => {
+  try {
+    const { nome, email} = request.body;
+    const feedback = await prismaClient.feedback.create({
+      data: {
+        nome,
+        email
+      },
+    });
+    return response.json(feedback);
+  } catch (error) {
+    console.error("Error creating feedback:", error);
+    return response.status(500).json({ error: "Internal server error" });
+  }
+});
+
 app.listen(port, () => console.log("Server is running on port ", port));
