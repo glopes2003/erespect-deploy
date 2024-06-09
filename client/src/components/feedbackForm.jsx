@@ -43,7 +43,7 @@ const FeedbackForm = () => {
                 </div>
                 <button
                   type="submit"
-                  className="btn btn-danger w-75"
+                  className="btn btn-danger w-75 feedback-form-btn"
                 >
                   ENVIAR
                 </button>
